@@ -4,22 +4,27 @@
 
 /* gloabl css */
 :root {
+  --primary-font: 'Helvetica Light';
+  --secondary-font: 'Helvetica Medium';
+
   --font-black: #333;
   --font-gray: #777;
   --font-success: #35ad35;
   --font-error: #ff0000c9;
 
-  --bg-color: #eee;
+  --bg-color: #f2f5f7;
   
   --primary-btn: #bbb;
   --danger-btn: #ff5757;
+
+
 }
 
 body,html{
   height: 100%;
   width: 100%;
   background: var(--bg-color);
-  font-family: 'Helvetica Light';
+  font-family: var(--primary-font);
   color: var(--font-black);
   font-size: 14px;
   /*overflow-x: hidden;*/
@@ -41,14 +46,14 @@ html{
 }
 
 button{
-  font-family: 'Helvetica Light';
+  font-family: var(--primary-font);
 }
 button:hover {
   transition: all .2s ease-in-out;
 }
 
 input, select, textarea{
-  font-family: 'Helvetica Light';
+  font-family: var(--primary-font);
 }
 a{
   color: #777;
@@ -82,7 +87,32 @@ body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) { overflow-y: v
     overflow-y: auto;
   }
   .child-content{
-    min-height: 100vh;
+    min-height: calc( 100vh - 300px );
+  }
+  .block-container{
+    padding: 0 70px;
+  }
+  .header-banner-container{
+    background-image: url(../../assets/img/header-bg.png);
+    background-size: cover;
+    background-position: center center;
+    height: 144px;
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(31,35,60,.8);
+    box-shadow: inset 0 0 0 2000px rgba(31,35,60,.8)    
+  }
+  .white-box{
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 24px 0 rgba(0,0,0,.06), 0 1px 0 0 rgba(0,0,0,.02);
+    box-shadow: 0 0 24px 0 rgba(0,0,0,.06), 0 1px 0 0 rgba(0,0,0,.02);
+  }
+  .footer-container{
+    background-image: url(../../assets/img/header-bg.png);
+    background-size: cover;
+    background-position: center center;
+    height: 144px;
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(31,35,60,.8);
+    box-shadow: inset 0 0 0 2000px rgba(31,35,60,.8)    
   }
 /*------------------------------*/
 

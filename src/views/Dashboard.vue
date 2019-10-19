@@ -1,12 +1,47 @@
 <template>
 	<div id="main-content" >
-	  <div class="navbar">
-	  	header
-	  </div>
+		<div class="header-banner-container">
+			
+		</div>
 
-	  <div class="child-content">
-	  	<router-view></router-view>
-	  </div>
+		<section class="block-container">
+		  <div class="navbar">
+		  	<ul>
+		  		<router-link tag="li" to="/dashboard/home">
+		  			<a>
+		  				<i class="fa fa-laptop"></i> 
+		  				Dashboard
+		  			</a>
+		  		</router-link>
+		  		<router-link tag="li" to="/dashboard/map">
+		  			<a ui-sref="gmap" ui-sref-active="active">
+		  				<i class="fa fa-map-marker"></i> 
+		  				Map
+		  			</a>
+		  		</router-link>
+		  		<li>
+		  			<a>
+		  				<i class="fa fa-heartbeat"></i> 
+		  				Responders
+		  			</a>
+		  		</li>
+		  		<li>
+		  			<a>
+		  				<i class="fa fa-users"></i> 
+		  				Users
+		  			</a>
+		  		</li>
+		  	</ul>
+		  </div>
+
+		  <div class="child-content">
+		  	<router-view></router-view>
+		  </div>
+	  </section>
+
+	  <div class="header-banner-container">
+			
+		</div>
 
 	  <transition name="fade">		
 		  <div v-if="showLoader" class="main-loader">

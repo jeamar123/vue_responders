@@ -8,6 +8,7 @@ axios.defaults.baseURL = process.env.BASE_URL;
 
 import Auth from './views/Auth.vue'
 import Dashboard from './views/Dashboard.vue'
+import Home from './views/Home.vue'
 import GMap from './views/GMap.vue'
 
 Vue.use(Router)
@@ -17,7 +18,7 @@ Vue.use(axios)
 export default new Router({
   // mode: 'history',
   // base: process.env.BASE_URL,
-  linkActiveClass: 'router-active',
+  linkActiveClass: 'active',
   routes: [
     { path: '*', redirect: '/auth'},
     { path: '/auth', name: 'Auth', component: Auth },
@@ -28,6 +29,7 @@ export default new Router({
       component: Dashboard,
       // meta: { auth: true },
       children: [
+        { name: 'Home', path: '/dashboard/home', component: Home },
         { name: 'GMap', path: '/dashboard/map', component: GMap },
       ]
     },

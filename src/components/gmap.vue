@@ -10,17 +10,19 @@
 				google: null,
 				mapConfig: {
 					center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          zoom: 12
 				},
 				apiKey: config.gmapApiKey,
 				infoWindow: null,
+				map : null,
+				marker : null,
 			}
 		},
 		async mounted() {
 	    const googleMapApi = await GoogleMapsApiLoader({
 	      apiKey: this.apiKey
 	    })
-	    this.google = googleMapApi
+	    this.google = googleMapApi;
 	    
 	    this.initializeMap();
 	  },
@@ -53,7 +55,12 @@
             };
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
-            infoWindow.open(this.map);
+            // infoWindow.open(this.map);
+            this.marker = new this.google.maps.Marker({
+					    position: pos,
+					    map: this.map,
+					    title: ''
+					  });
             this.map.setCenter(pos);
           },() => {
             this.handleLocationError(true, infoWindow, this.map.getCenter());
